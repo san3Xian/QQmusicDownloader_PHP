@@ -98,7 +98,7 @@ class QmusicSearch {
         $this->page = $p;
         $this->number = $n;
         $spider = curl_init();
-        $spiderUrl = QmusicSearch::$searchStatement . '&p=' . $this->page .'&n=' . $this->number  .  '&w=' . $word;
+        $spiderUrl = QmusicSearch::$searchStatement . '&p=' . $this->page .'&n=' . $this->number  .  '&w=' . urlencode($word);
         curl_setopt($spider, CURLOPT_URL, $spiderUrl);
         curl_setopt($spider, CURLOPT_RETURNTRANSFER, TRUE);
         curl_setopt($spider, CURLOPT_SSL_VERIFYPEER, FALSE);
